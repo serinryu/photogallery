@@ -2,7 +2,7 @@
 function image_list(startnum) {
     var img_src;
     for(var i = 0; i < 11 ; i++){
-        img_src = "'/assets/image/image" + (startnum+3*i) + ".jpg'";
+        img_src = "'./assets/image/image" + (startnum+3*i) + ".jpg'";
         document.write("<div class='image-box'>");
         document.write('<a data-fancybox="gallery" href='+img_src+'data-sizes="480px, 800px">');
         document.write("<img src="+img_src+">");
