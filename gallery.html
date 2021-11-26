@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serin:Ryu</title>
+    <link href="assets/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
+</head>
+<!--
+<script
+  src="https://code.jquery.com/jquery-3.6.0.js"
+  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+  crossorigin="anonymous"></script>
+-->
+<script type="module">
+    import { Fancybox } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.esm.js";
+</script>
+
+<!--이미지 반복-->
+<script> 
+    function image_list(startnum) {
+        var img_src;
+        for(var i = 0; i < 11 ; i++){
+            img_src = "'/assets/image/image" + (startnum+3*i) + ".jpg'";
+            document.write("<div class='image-box'>");
+            document.write('<a data-fancybox="gallery" href='+img_src+'data-sizes="480px, 800px">');
+            document.write("<img src="+img_src+">");
+            document.write('<div class="wrap"></div>');
+            document.write('</a>');
+            document.write('</div>');
+        }
+    }
+</script>
+
+<body>
+    <!--Header-->
+        <header class="header_subpage">
+            <div class="header_logo"><a class="a_origin" href="index.html"><i class=""></i>Serin:Ryu</div>
+            <div class="header_menu">
+                <li><a class="a_origin" href="index.html">Home</a></li>
+                <li><a class="a_origin" href="gallery.html" >Picture</a></li>
+                <li><a class="a_origin" href="about.html">About</a></li>
+                <li><a class="a_origin" href="contact.html">Contact</a></li>
+            </div>
+        <!--hamburger button-->
+
+        <div id="btn">
+            <div id='top'></div>
+            <div id='middle'></div>
+            <div id='bottom'></div>
+        </div>
+        <div id="box">
+            <div id="items">
+                    <div class="item"><a href="index.html">Home</a></div>
+                    <div class="item"><a href="gallery.html">Picture</a></div>
+                    <div class="item"><a href="about.html">About</a></div>
+                    <div class="item"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+        <script> 
+            const sidebarBox = document.querySelector('#box'),
+                sidebarBtn = document.querySelector('#btn'),
+                pageWrapper = document.querySelector('#page-wrapper');
+            sidebarBtn.addEventListener('click', event => {
+                    sidebarBtn.classList.toggle('active');
+                    sidebarBox.classList.toggle('active');
+            });
+            pageWrapper.addEventListener('click', event => {
+
+                    if (sidebarBox.classList.contains('active')) {
+                            sidebarBtn.classList.remove('active');
+                            sidebarBox.classList.remove('active');
+                    }
+            });
+            window.addEventListener('keydown', event => {
+
+                    if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
+                            sidebarBtn.classList.remove('active');
+                            sidebarBox.classList.remove('active');
+                    }
+            });
+        </script>
+        </header>
+
+    <!--Container-->
+    <div class="container">
+    <div class="images">
+      <div class="imageFlex1">
+            <script>image_list(1);</script> 
+      </div>
+    </div>
+    <div class="images">
+        <div class="imageFlex2">
+            <script>image_list(2);</script> 
+        </div>
+    </div>
+    <div class="images">
+        <div class="imageFlex3">
+            <script>image_list(3);</script> 
+        </div>
+    </div>
+    </div>
+</body>
+</html>

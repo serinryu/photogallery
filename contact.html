@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serin:Ryu</title>
+    <link href="assets/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <!--Header-->
+    <header class="header_subpage">
+        <div class="header_logo"><a class="a_origin" href="index.html"><i class=""></i>Serin:Ryu</div>
+        <div class="header_menu">
+            <li><a class="a_origin" href="index.html">Home</a></li>
+            <li><a class="a_origin" href="gallery.html">Picture</a></li>
+            <li><a class="a_origin" href="about.html">About</a></li>
+            <li><a class="a_origin" href="contact.html">Contact</a></li>
+        </div>
+        
+        <!--hamburger button-->
+
+        <div id="btn">
+            <div id='top'></div>
+            <div id='middle'></div>
+            <div id='bottom'></div>
+        </div>
+        <div id="box">
+            <div id="items">
+                    <div class="item"><a href="index.html">Home</a></div>
+                    <div class="item"><a href="gallery.html">Picture</a></div>
+                    <div class="item"><a href="about.html">About</a></div>
+                    <div class="item"><a href="contact.html">Contact</a></div>
+            </div>
+        </div>
+        <script> 
+            const sidebarBox = document.querySelector('#box'),
+                sidebarBtn = document.querySelector('#btn'),
+                pageWrapper = document.querySelector('#page-wrapper');
+            sidebarBtn.addEventListener('click', event => {
+                    sidebarBtn.classList.toggle('active');
+                    sidebarBox.classList.toggle('active');
+            });
+            pageWrapper.addEventListener('click', event => {
+
+                    if (sidebarBox.classList.contains('active')) {
+                            sidebarBtn.classList.remove('active');
+                            sidebarBox.classList.remove('active');
+                    }
+            });
+            window.addEventListener('keydown', event => {
+
+                    if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
+                            sidebarBtn.classList.remove('active');
+                            sidebarBox.classList.remove('active');
+                    }
+            });
+        </script>        
+    </header>
+
+    <!--Section-->
+    <div class="contact_title"> Send email to me </div>
+    <div class="contact_container">
+        <form action="https://formsubmit.co/serin0404@naver.com" method="POST">
+          <label for="email">your email</label>
+          <input type="text" id="email" name="firstname" placeholder="Your email for reply..">
+          <label for="title">title</label>
+          <input type="text" id="title" name="lastname" placeholder="Write the title..">
+          <label for="category">category</label>
+          <select id="category" name="country">
+            <option value="suggestion">suggestion</option>
+            <option value="question">question</option>
+            <option value="etc">etc</option>
+          </select>
+          <label for="subject">Subject</label>
+          <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+            <input type="submit" value="Send email">
+        </form>
+    </div>
+
+    <!--Footer-->
+    <footer class="footer_subpage">
+        <p class="copyright">Copyright @ Ryu Serin. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
