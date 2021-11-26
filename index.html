@@ -7,7 +7,9 @@
     <title>Serin:Ryu</title>
     <link href="assets/style.css" type="text/css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/43c8e25217.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="main.js"></script>
 </head>
+
 <body>
     <!--Header-->
     <header class="header_mainpage">
@@ -34,29 +36,6 @@
                     <div class="item"><a href="contact.html">Contact</a></div>
             </div>
         </div>
-        <script> 
-            const sidebarBox = document.querySelector('#box'),
-                sidebarBtn = document.querySelector('#btn'),
-                pageWrapper = document.querySelector('#page-wrapper');
-            sidebarBtn.addEventListener('click', event => {
-                    sidebarBtn.classList.toggle('active');
-                    sidebarBox.classList.toggle('active');
-            });
-            pageWrapper.addEventListener('click', event => {
-
-                    if (sidebarBox.classList.contains('active')) {
-                            sidebarBtn.classList.remove('active');
-                            sidebarBox.classList.remove('active');
-                    }
-            });
-            window.addEventListener('keydown', event => {
-
-                    if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
-                            sidebarBtn.classList.remove('active');
-                            sidebarBox.classList.remove('active');
-                    }
-            });
-        </script>
     </header>
 
     <!--Video-->

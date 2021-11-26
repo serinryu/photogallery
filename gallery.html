@@ -7,30 +7,16 @@
     <title>Serin:Ryu</title>
     <link href="assets/style.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css"/>
-</head>
-<script
-  src="https://code.jquery.com/jquery-3.6.0.js"
-  integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-  crossorigin="anonymous"></script>
-<script type="module">
+    <!--Fancy Box-->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script type="module">
     import { Fancybox } from "https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.esm.js";
-</script>
-
-<!--이미지 반복-->
-<script> 
-    function image_list(startnum) {
-        var img_src;
-        for(var i = 0; i < 11 ; i++){
-            img_src = "'/assets/image/image" + (startnum+3*i) + ".jpg'";
-            document.write("<div class='image-box'>");
-            document.write('<a data-fancybox="gallery" href='+img_src+'data-sizes="480px, 800px">');
-            document.write("<img src="+img_src+">");
-            document.write('<div class="wrap"></div>');
-            document.write('</a>');
-            document.write('</div>');
-        }
-    }
-</script>
+    </script>
+    <script type="text/javascript" src="main.js"></script>
+</head>
 
 <body>
     <!--Header-->
@@ -79,27 +65,3 @@
     </div>
 </body>
 </html>
-
-<script> 
-    const sidebarBox = document.querySelector('#box'),
-        sidebarBtn = document.querySelector('#btn'),
-        pageWrapper = document.querySelector('#page-wrapper');
-    sidebarBtn.addEventListener('click', event => {
-            sidebarBtn.classList.toggle('active');
-            sidebarBox.classList.toggle('active');
-    });
-    pageWrapper.addEventListener('click', event => {
-
-            if (sidebarBox.classList.contains('active')) {
-                    sidebarBtn.classList.remove('active');
-                    sidebarBox.classList.remove('active');
-            }
-    });
-    window.addEventListener('keydown', event => {
-
-            if (sidebarBox.classList.contains('active') && event.keyCode === 27) {
-                    sidebarBtn.classList.remove('active');
-                    sidebarBox.classList.remove('active');
-            }
-    });
-</script>
